@@ -1,0 +1,20 @@
+Conteudo 1..
+Configuraçoes de ambiente
+    - Node
+    - Navegador
+    - VScode,
+
+Conteudo 2..
+Basicos sobre javascript
+
+Conteudo 3..
+Funçoes
+
+Conteudo 4..
+Programação orientada a objeto
+
+Conteudo 5..
+Depuração
+
+Conteudo 6..
+Introdução a ES6 e ES7
