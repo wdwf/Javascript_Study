@@ -257,7 +257,7 @@ console.log(jsBook.title);
     o metodo set tem a função de atribuir um valor 
 */
 
-class pessoa {
+class Pessoa {
     constructor (name) {
         this._name = name;
     }
@@ -267,17 +267,29 @@ class pessoa {
     set name(value) {
         this._name = value;
     }
+    static frase() {
+        return 'Gosto de batata S2';
+    }
+    static fraseSec(otherClass) {
+        return 'Hello ' + otherClass._name;
+    }
 }
 
-let newPerson = new pessoa('Jom');
+let newPerson = new Pessoa('Jom');
 console.log(newPerson.name);
 newPerson.name = 'Josh';
 console.log(newPerson.name);
 newPerson._name = 'Sam';
 console.log(newPerson.name);
 
+console.log(Pessoa.fraseSec(newPerson));
+
 
 /*
+    O uso de static se vem para impedir que classes instaciadas chamem tal metodo, ou seja:
+    pessoa.frase()      - Funcionaria.
+    newPessoa.frase()   - Geraria um erro.
+
     O uso do _ é para simbolizar que o atributo é privado uma vez q o javascript não
     tem essa habilidade.
 
