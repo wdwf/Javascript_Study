@@ -477,3 +477,13 @@ for (let i = 0; i < length; i++) {
 }
 
 console.log(int16);
+
+
+
+// DESTRUCTURING IN ARRAY
+// Funcionalidade apenas do ES6
+
+// const colection = [1,2,3,4,5,6,7,8,9,10]
+// let { length, 0: first, [length - 1]: last } = colection;
+
+// console.log(first, last);
