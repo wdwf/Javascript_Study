@@ -22,7 +22,7 @@ const noticia = setTimeout(aviso, 5000);
 
 
 /*
-    SetInterval
+    SETINTERVAL
 
     Executa uma função a cada tantos milesegundos.
     Este método continua chamando a função até clearInterval()ser chamado ou a janela ser fechada.
