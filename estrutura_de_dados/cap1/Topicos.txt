@@ -4,17 +4,17 @@ Configuraçoes de ambiente
     - Navegador
     - VScode,
 
-Conteudo 2..
+Conteudo 1..
 Basicos sobre javascript
 
-Conteudo 3..
+Conteudo 2..
 Funçoes
 
-Conteudo 4..
+Conteudo 3..
 Programação orientada a objeto
 
-Conteudo 5..
-Depuração
+Conteudo 4..
+Try/catch/finally
 
-Conteudo 6..
+Conteudo 5..
 Introdução a ES6 e ES7

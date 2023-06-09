@@ -1,75 +1,45 @@
-
-// PROGRAMAÇÃO ORIENTADA A OBJETO
-
-/*
-    - Objetos são coleçoes de pares chave-valor.
-    
-    - Ha duas maneiras de se declarar um objeto
-        * new Object()
-        * {}
+// Throw, Try, Catch, Finally
+/* 
+  Try - Define um bloco de codigo para ser testado quanto a erros enquanto esta sendo executado
+  Catch - Define um bloco de codigo para lidar com qualquer erro
+  Finally - Define um bloco de codigo para ser executado independentimento do resultado do erro
+  Throw - instrução que define um erro personalizado
 */
 
-let pessoa = {
-    name: {
-        primeiroNome: 'Lucas',
-        sobrenome: 'Sabino'
-    },
-    idade: 20
-};
+// Erros podem acontecer devido a entradas erradas e outras coisas imprevisiveis
 
-/*
-    Em POO, um objeto é uma instancia de uma classe. Uma classe define as caracteristicas
-    do objeto.
-*/
+// try {
+//   adlert("Welcome guest!");
+// } catch (err) {
+//   console.log(err);
+// }
 
-//- Podemos declarar uma classe que representa um livro da seguinte maneira:
-function Book(title, pages, code) {
-    this.title = title;
-    this.pages = pages;
-    this.code = code;
+// Neste proximo exemplo. Se o valor estiver errado, uma exceção (err) é lançada.
+// A exceção (err) é capturada pela instrução catch e uma mensagem de erro personalizada é exibida:
+
+function myFunction(mensagem) {
+  try {
+    if(!mensagem) throw "Mensagem vazia";
+    if(isNaN(mensagem)) throw "Não é um numero";
+    mensagem = Number(mensagem);
+    if(mensagem < 5) throw "Muito pequeno";
+    if(mensagem > 10) throw "Muito grande"
+  } catch (err) {
+    console.log(`Erro encontrado: ${err}`);
+  }
+}
+// myFunction("15")
+
+// Usando o finally
+
+function teste(valor) {
+  try {
+    if(!valor) throw "Valor vazio revise o codigo..."
+  } catch (err) {
+    console.log(err);
+  } finally {
+    console.log("Bloco Finally executado com sucesso ✔");
+  }
 }
 
-// Para instanciarmos essa classe, podemos usar o codigo a seguir:
-
-let book = new Book('Aventuras de PI', 300, 1234);
-
-
-// Então podemos Acessar o seus atributos e atualiza-lós do seguinte modo:
-
-book.title = 'A viagem de tintin';
-console.log(book.title);
-
-// Uma classe tambem pode conter funçoes. Podemos declarar
-// e usar uma função em uma classe ja implementada do seguinte modo:
-
-Book.prototype.printTitle = function() {
-    console.log(this.title);
-}
-
-/*
-    Quando se trata de herança, o JavaScript tem somente um construtor: objetos. 
-    Cada objeto tem um link interno para um outro objeto chamado prototype. 
-    Esse objeto prototype também tem um atributo prototype, 
-    e assim por diante até o que o valor null seja encontrado como sendo o seu prototype. 
-    null que, por definição, não tem prototype, e age como um link final nesta 
-    cadeia de protótipos (prototype chain).
-
-    entendendo como funciona:
-    - https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
-    - https://www.w3schools.com/js/js_object_prototypes.asp
-*/
-
-book.printTitle();
-
-// Tambem é possivel declarar a função diretamente na definição da classe quando a criamos
-/*
-    function Book(title, pages, code) {
-        this.title = title;
-        this.pages = pages;
-        this.code = code;
-        this.printCode = function() {
-            console.log(this.code)
-        }
-    }
-*/
-
+teste()

@@ -107,8 +107,14 @@ console.log(numeros);
     EX:
     .splice(5,3) -> Ele iniciara na posição 5(de acordo com o index) e removerá 
     os elementos (de acordo com o length)
-
+    
     [0,1,2,3,4,(5,6,7),8,9] -> O numeros 5,6,7 serão apagados
+
+    >este mesmo metodo pode ser usado para substituir os elementos em determinada
+    posição
+    .splice(5,3, 100, 200) -> ele vai tirar 3 elemento e adicionar no lugar o 100 e o 200
+    
+    [0,1,2,3,4,100,200,8,9]
 */
 
 let contagem = [0,1,2,3,4,5,6,7,8,9];
@@ -135,7 +141,7 @@ console.log(arrBid);
 
 /*
     O Javascript aceita apenas arrays unidimensionais, não tendo suporte para matrizes.
-    Contudo podemos implementar qualquer array muitidimensional, usando array de arrays.
+    Contudo podemos implementar qualquer array multidimensional, usando array de arrays.
     
     Para acessar os elementos definidos anteriormente podemos fazer do seguinte modo.
 */
@@ -179,7 +185,7 @@ for (let x = 0; x < 3; x++) {
     }
 }
 
-console.log('\n',matrix3);
+console.log('\n', "matris de 3:", matrix3);
 
 
 //REFERENCIAS PARA METODOS DE ARRAY EM JAVASCRIPT
@@ -242,7 +248,8 @@ console.log('\ntest_Find',test_Find);
 let test_ForEach = exemploNum.forEach(soma2);
 console.log("\ntest_ForEach",test_ForEach);
 
-// reduce() - 
+// reduce(() => {}, [valor inicial]) - executa uma função em cada elemento da matriz em ordem, passando o valor de retorno do cálculo no elemento anterior. 
+// Se necessario é possivel fornecer um valor inicial, se não ele pega do primeiro indice
 let test_Reduce = exemploNum.reduce(function(previous, current, index) {
     return previous + current;
 })
@@ -311,9 +318,12 @@ let numbers = [1,2,3,4,5,6,7,8,9]
 //             Para usar este metodo é necessario acessar a propriedade Symbol.iterator.
 //             Ao chegar no final do array usando o metodo next se encontra value: undefined, done: true
 
+// Com este metodo é possivel recriar o console.log
+
 let iterator = numbers[Symbol.iterator]();
-console.log(iterator.next());
-console.log(iterator.next().value);
+console.log("@@iterator -",iterator);
+console.log("@@iterator -",iterator.next());
+console.log("@@iterator -", iterator.next().value);
 
 
 //copyWithin - Copia uma sequencia de valor do array para a posição de um indice de inicio
@@ -391,8 +401,12 @@ console.log(copyOf);
 
 //values - Devolve @@iterator, que contem os valores do array.
 
+let arrayValues = ["a","b","c"]
+const resultValues = arrayValues.values()
 
-
+for (const value of resultValues) {
+    console.log("valuer method:",value);
+}
 
 
 //ORDENANDO ELEMENTOS

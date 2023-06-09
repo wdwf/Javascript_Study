@@ -9,10 +9,10 @@
 /*
     Funcioanlidades da ECMAScript 6
 
-    - let e cosnt
+    - let e const
     - Templates Literais
     - Desestruturação
-    - Operador spread
+    - Operador spread e rest
     - Funçoes de seta =>
     - Classes
 
@@ -133,7 +133,7 @@ console.log(soma(...params));
 console.log(soma.apply(undefined, params));
 
 /*
-    O operador spread (...) tamebm pode ser usado como um parametro rest em funçoes 
+    O operador spread (...) tambem pode ser usado como um parametro rest em funçoes 
     para substituir arguments.
 */
 function restParamaterFunction (x, y, ...a) {
@@ -306,8 +306,17 @@ console.log(Pessoa.fraseSec(newPerson));
     - tail calls (chamadas finais),
     - Symbol
 
+    |------------------------------------------------------|
+    | Iteradores....
+    |------------------------------------------------------|
 
     ES7 ...
+    - Exponentiation Operator
+    - Async functions
+    - Array.prototype.includes()
+    - Object.entries()
+    - Add Paddings in String !
+    - Trailing commas
     
 
     |------------------------------------------------------|
